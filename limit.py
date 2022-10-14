@@ -8,7 +8,7 @@ from sys import argv
 root = Tk()
 root.title('')
 tm = datetime.utcnow()
-start_date, finish_date = int(argv[1]), int(argv[2])
+start_date, end_date = int(argv[1]), int(argv[2])
 front = 10          # candeles number
 visual = argv[3]    # yes - display 
 d = {}
@@ -240,7 +240,7 @@ for filename in glob.glob("*.txt"):
         del data['none']
     except:
         pass
-    data = data[(data['date'] >= start_date) & (data['date'] <= finish_date)]
+    data = data[(data['date'] >= start_date) & (data['date'] <= end_date)]
     data['open'] = (data['bid'] + data['ask']) / 2
     data['close'] = data['open'].shift(-1)
     data.dropna(inplace = True)
@@ -270,7 +270,7 @@ for filename in glob.glob("*.txt"):
         fig.text(0.82, 0.03, 'forth →', size=13, bbox=dict(boxstyle="square", ec='whitesmoke', fc='whitesmoke'))
         fig.text(0.15, 0.03, 'back ←', size=13, bbox=dict(boxstyle="square", ec='whitesmoke', fc='whitesmoke'))
         fig.text(0.43, 0.03, 'stop/play Spacebar', size=13, bbox=dict(boxstyle="square", ec='whitesmoke', fc='whitesmoke'))
-        fig.suptitle('BitMEX XBTUSD ' + str(start_date) + '-' + str(finish_date), fontsize=16)
+        fig.suptitle('BitMEX XBTUSD ' + str(start_date) + '-' + str(end_date), fontsize=16)
         candles = fig.add_subplot(5, 3, (1, 5), facecolor = 'whitesmoke')
         plotting = fig.add_subplot(5, 1, (3, 15), facecolor = 'whitesmoke', visible = 'x')
         fig.subplots_adjust(hspace=1)
