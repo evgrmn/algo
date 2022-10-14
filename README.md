@@ -1,4 +1,4 @@
-#An example of visualization of a trading algorithm using the Matplotlib module.
+# An example of visualization of a trading algorithm using the Matplotlib module.
 
 To run the program use:
 python3 limit.py <start_date> <end_date> yes
