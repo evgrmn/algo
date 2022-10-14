@@ -1,5 +1,5 @@
 # An example of visualization of a trading algorithm using the Matplotlib module
-![Image](https://github.com/evgrmn/algo/blob/main/algo_img.jpg =250x250)
+<img src="https://github.com/evgrmn/algo/blob/main/algo_img.jpg" width="500" height="400">
 
 The algorithm places limit orders on the Bitmex exchange.  
 
